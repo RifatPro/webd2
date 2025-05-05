@@ -1,0 +1,152 @@
+
+.box-container-left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap:5px;
+  }
+  
+  /* Top box */
+  .box-container-left-top {
+    width: 100%; /* Fill available width */
+    height: 50%; /* Take half the height of the parent container */
+    padding: 20px;
+    border: 5px solid red;
+    box-sizing: border-box; /* Include padding in width and height */
+  }
+  
+  /* Bottom box */
+  .box-container-left-bottom {
+    width: 100%;
+    height: 50%;
+    padding: 20px;
+    border: 5px solid yellow;
+    box-sizing: border-box;
+  }
+  
+  /* Right container */
+  .box-container-right {
+    width: 700px;
+    height: 900px;
+    border: 5px solid green;
+  }
+  
+        .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+        }
+  
+        .btn-circle {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-color: black;
+        }
+  
+        .box-container {
+          display: flex;
+          align-items: stretch;
+        }
+  
+        .box-container-left {
+          display: flex;
+          flex-direction: column;
+        }
+  
+        .box-container-left-top {
+          width: 700px;
+          height: 800px;
+          border: 5px solid red;
+          padding: 20px;
+        }
+  
+        /* Form styling */
+        .form-example div {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+  
+        .form-example label {
+          width: 150px; /* Fixed label width */
+          font-weight: bold;
+        }
+  
+        .form-example input {
+          flex: 1; /* Make input take remaining space */
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        }
+        /* Background color input */
+        .color-picker {
+          /* display: flex; */
+          align-items: start;
+          gap: 5px;
+        }
+        .color-picker input[type="color"] {
+          width: 40px; /* Button-sized */
+          height: 30px;
+          border: none;
+          padding: 0 450px 0 0;
+          cursor: pointer;
+          background-color: transparent; /* Removes extra background */
+        }
+  
+        /* Gender section */
+        .gender {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+  
+        .gender input {
+          margin-left: 5px;
+        }
+  
+        /* Checkboxes side by side */
+        .checkbox-container {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+        }
+  
+        /* Submit button */
+        .box-container-left-top button {
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+          cursor: pointer;
+          margin-top: 15px;
+        }
+  
+        .box-container-left-top button:hover {
+          background-color: #0056b3;
+        }
+     
+        
+  
+  
+  
+  /* Right box code */
+  
+  table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+  th {
+    background-color: lightgray;
+  }
