@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Layout</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
@@ -24,7 +24,12 @@
           <!-- Left Column (Contains Two Boxes) -->
           <div class="box-container-left">
             <div class="box-container-left-top">
-              <form action="process.php" method="post" class="form-example" onsubmit="return val()">
+              <form
+                action="process.php"
+                method="post"
+                class="form-example"
+                onsubmit="return val()"
+              >
                 <div>
                   <label for="name">Fullname:</label>
                   <input type="text" name="name" id="name" required />
@@ -65,7 +70,6 @@
                   <input type="text" name="country" id="country" required />
                 </div>
 
-
                 <div class="color-picker">
                   <label for="bg-color">Color:</label>
                   <input type="color" id="bg-color" name="bg_color" />
@@ -73,13 +77,24 @@
 
                 <div class="gender">
                   <label>Gender:</label>
-                  <input type="radio" id="male" name="gender" value="male" required />
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    required
+                  />
                   <label for="male">Male</label>
-              
-                  <input type="radio" id="female" name="gender" value="female" required />
+
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="female"
+                    required
+                  />
                   <label for="female">Female</label>
-              </div>
-              
+                </div>
 
                 <div class="checkbox-container">
                   <input type="checkbox" id="scales" name="scales" checked />
@@ -90,8 +105,7 @@
                 </div>
 
                 <div>
-                  <button type="submit" >Submit</button>
-
+                  <button type="submit">Submit</button>
                 </div>
               </form>
             </div>
@@ -108,118 +122,84 @@
     <footer></footer>
 
     <script>
-      // document.addEventListener("DOMContentLoaded", function () {
-      //   const form = document.querySelector(".form-example"); // Select the form
-    
-      //   form.addEventListener("submit", function (e) {
-          
-      //     + e.preventDefault(); // Prevent default form submission
-    
-          // Collecting values from the form inputs
-          function val() {
-          const name = document.getElementById("name").value.trim();
-          const email = document.getElementById("email").value.trim();
-          const password = document.getElementById("password").value;
-          const confirmPassword = document.getElementById("confirm_password").value;
-          const dob = document.getElementById("dob").value;
-          const country = document.getElementById("country").value.trim();
-          const color = document.getElementById("bg-color").value;
-          const genderInput = document.querySelector('input[name="gender"]:checked');
-          const scales = document.getElementById("scales").checked;
-          const horns = document.getElementById("horns").checked;
-    
-          // const errors = []; // Array to collect error messages
-    
-          
-          if (password.length < 8) {
-         
-            alert("password fix it");
-            preventDefault();
-            return false;
-          }
-          if (/\s/.test(password)) {
-            // errors.push("Password must not contain spaces.");
-            alert("password fix it");
-            preventDefault();
-            return false;
-          }
-          if (password !== confirmPassword) {
-            //errors.push("Passwords do not match.");
-            alert("confirm password fix it");
-            preventDefault();
-            return false;
-          }
-    
-          
-          if (dob) {
-            const dobDate = new Date(dob);
-            const today = new Date();
-            let age = today.getFullYear() - dobDate.getFullYear();
-            const m = today.getMonth() - dobDate.getMonth();
-            if (m < 0 || (m === 0 && today.getDate() < dobDate.getDate())) {
-              age--;
-            }
-            if (age < 18) {
-              alert("error fix it");
-            preventDefault();
-            return false;
-            }
-          } else {
-            return true;
-          }
-    
-          
-          if (country === "") {
-            //errors.push("Please enter/select a country.");
-            alert("error fix it");
-            preventDefault();
-            return false;
-          }
-    
-          
-          if (!genderInput) {
-            //errors.push("Please select a gender.");
-            alert("error fix it");
-            preventDefault();
-            return false;
-          }
-    
-          
-          // if (errors.length > 0) {
-          //   alert("Error:\n" + errors.join("\n"));
-          //   return; 
-          // }
-    
-          // If validation passes, create a data object to submit
-          // const formData = {
-          //   name,
-          //   email,
-          //   password,
-          //   confirmPassword,
-          //   dob,
-          //   country,
-          //   color,
-          //   gender: genderInput.value,
-          //   agreedToTerms: scales,
-          //   allowCookies: horns,
-          // };
-    
-          
-          //console.log("Form Submitted Successfully:", formData);
-    
-          
-      alert("Form Submitted Successfully! Check console for data.");
-    
-          
-          form.reset();
-      //   });
-      // });
-            return true;
+      function val() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirm_password").value;
+        const dob = document.getElementById("dob").value;
+        const country = document.getElementById("country").value.trim();
+        const color = document.getElementById("bg-color").value;
+        const genderInput = document.querySelector(
+          'input[name="gender"]:checked'
+        );
+        const scales = document.getElementById("scales").checked;
+        const horns = document.getElementById("horns").checked;
+
+        const nameRegex = /^[A-Za-z\s]+$/;
+        if (!nameRegex.test(name)) {
+          alert("Name must contain only letters and spaces.");
+          return false;
         }
+
+        
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+        if (password.length < 8) {
+          alert("password must be at least 8 characters");
+          preventDefault();
+          return false;
+        }
+        if (/\s/.test(password)) {
+          alert("password must not contain spaces");
+          preventDefault();
+          return false;
+        }
+        if (password !== confirmPassword) {
+          alert("confirm password");
+          preventDefault();
+          return false;
+        }
+
+        if (dob) {
+          const dobDate = new Date(dob);
+          const today = new Date();
+          let age = today.getFullYear() - dobDate.getFullYear();
+          const m = today.getMonth() - dobDate.getMonth();
+          if (m < 0 || (m === 0 && today.getDate() < dobDate.getDate())) {
+            age--;
+          }
+          if (age < 18) {
+            alert("error fix it");
+            preventDefault();
+            return false;
+          }
+        } else {
+          return true;
+        }
+
+        if (country === "") {
+          alert("error fix it");
+          preventDefault();
+          return false;
+        }
+
+        if (!genderInput) {
+          alert("error fix it");
+          preventDefault();
+          return false;
+        }
+
+        alert("Form Submitted Successfully! Check console for data.");
+
+        form.reset();
+
+        return true;
+      }
     </script>
-    
-    
-    
-    
   </body>
 </html>
