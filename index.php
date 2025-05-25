@@ -36,7 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
   </head>
 
   <body>
-    <header></header>
+<header style="display: flex; justify-content: flex-end; padding: 10px; background-color: #f0f0f0;">
+  <a href="22-47371-2.html" target="_blank">
+    <button style="margin-right: 10px;">22-47371-2</button>
+  </a>
+  <a href="22-47848-2.html" target="_blank">
+    <button>22-47848-2</button>
+  </a>
+</header>
+
 
     <main>
       <section class="container">
@@ -45,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
         </div>
 
         <div>
-          <p>Flexbox</p>
+          <p>AR COMPANY</p>
         </div>
 
         <div class="box-container">

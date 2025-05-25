@@ -76,6 +76,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </style>
 </head>
 <body>
+<header style="display: flex; justify-content: flex-end; align-items: center; padding: 10px 20px; background-color: #f0f0f0; gap: 10px;">
+  <a href="22-47371-2.html" target="_blank">
+    <button style="padding: 6px 12px;">22-47371-2</button>
+  </a>
+  <a href="22-47848-2.html" target="_blank">
+    <button style="padding: 6px 12px;">22-47848-2</button>
+  </a>
+  <form action="logout.php" method="post" style="margin: 0;">
+    <button type="submit" style="padding: 6px 12px; background-color: #d9534f; color: white; border: none; border-radius: 4px;">Logout</button>
+  </form>
+</header>
 
 <h2>Select Exactly 10 Cities</h2>
 

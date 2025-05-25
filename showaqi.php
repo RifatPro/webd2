@@ -33,8 +33,10 @@ while ($row = $result->fetch_assoc()) {
 }
 $stmt->close();
 $conn->close();
-?>
 
+// Get background color from cookie if available
+$bgColor = isset($_COOKIE['bg_color']) ? $_COOKIE['bg_color'] : '#ffffff';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,11 +46,23 @@ $conn->close();
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-color: <?php echo htmlspecialchars($bgColor); ?>;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            gap: 10px;
         }
         table {
-            margin: auto;
+            margin: 40px auto;
             border-collapse: collapse;
             width: 80%;
+            background-color: #ffffff; /* Table stays white */
         }
         table, th, td {
             border: 1px solid #555;
@@ -59,9 +73,27 @@ $conn->close();
         th {
             background-color: #f2f2f2;
         }
+        button {
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+        .logout-btn {
+            background-color: #d9534f;
+            color: white;
+        }
     </style>
 </head>
 <body>
+
+<header>
+    <a href="22-47371-2.html" target="_blank"><button>22-47371-2</button></a>
+    <a href="22-47848-2.html" target="_blank"><button>22-47848-2</button></a>
+    <form action="logout.php" method="post" style="margin: 0;">
+        <button type="submit" class="logout-btn">Logout</button>
+    </form>
+</header>
 
 <h2>AQI Information for Selected Cities</h2>
 
