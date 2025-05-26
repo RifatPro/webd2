@@ -35,8 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['form_data'])) {
     );
 
     if ($stmt->execute()) {
-        // Set cookie
-        setcookie("user_color", $data['color'], time() + 86400, "/");
+        // Set cookie for 30 days
+        setcookie("user_color", $data['color'], time() + (86400 * 30), "/");
         unset($_SESSION['form_data']);
         $_SESSION['register_message'] = "Registration successful! Please log in.";
         header("Location: index.php");

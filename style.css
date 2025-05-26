@@ -3,36 +3,30 @@ body {
     margin: 0;
     padding: 0;
 }
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 14px 32px;
     background-color: #fcfdfe;
     gap: 10px;
 }
-
 .header-left {
     display: flex;
     align-items: center;
     gap: 16px;
 }
-
 .header-left p {
     font-weight: bold;
     font-size: 1.2em;
     margin: 0;
-    text-decoration-color: #0e0e0e10;
     letter-spacing: 1px;
 }
-
 .header-right {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 .btn-circle {
     width: 40px;
     height: 40px;
@@ -42,7 +36,6 @@ header {
     margin-right: 4px;
     cursor: pointer;
 }
-
 .header-right button {
     padding: 12px 28px;
     background: linear-gradient(90deg, #15c5fa 60%, #fe885e 100%);
@@ -56,58 +49,97 @@ header {
     cursor: pointer;
     transition: background 0.22s, box-shadow 0.18s, transform 0.18s;
 }
-
 .header-right button:hover {
     background: linear-gradient(90deg, #fe885e 20%, #15c5fa 100%);
     box-shadow: 0 4px 16px rgba(254,136,94,0.18);
     color: #fff;
     transform: translateY(-2px) scale(1.04);
 }
-
-
-
-
 .container {
     background-color: rgb(207, 69, 15);
-    padding: 20px;
+    padding: 40px 0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
 }
-
 .box-container {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: flex-start;
-    gap: 30px;
-    width: 80vw;
-    max-width: 1100px;
+    gap: 32px;
+    width: 100%;
+    max-width: 900px;
 }
-
-.box-container-left {
+.box-container-left,
+.box-container-right {
+    width: 360px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 350px;
 }
-
-.box-container-left-top {
-    background-color: rgb(240, 223, 173);
-    width: 350px;
+.box-container-left {
+    gap: 20px;
+}
+.box-container-left-top,
+.box-container-left-bottom,
+.box-container-right {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(80,80,80,0.10);
+    margin-bottom: 0;
+    background: #f7f7f7;
     padding: 20px;
     box-sizing: border-box;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    box-shadow: 0 2px 12px rgba(200,120,0,0.10);
 }
-
+.box-container-left-top {
+    background-color: rgb(240, 223, 173);
+    margin-bottom: 18px;
+}
+.box-container-left-bottom {
+    background-color: rgb(255, 0, 8);
+    color: #fff;
+}
+.box-container-left-bottom h3 {
+    color: #fff;
+    margin: 0 0 14px 0;
+    font-size: 19px;
+}
+/* Right box */
+.box-container-right {
+    background-color: rgb(43, 149, 206);
+    color: #fff;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 220px;
+    /* Let it grow with content, not fixed! */
+}
+/* Table Style */
+.box-container-right table {
+    width: 90%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.09);
+    font-size: 15px;
+    color: #222;
+}
+.box-container-right th, .box-container-right td {
+    border: 1px solid #aaa;
+    padding: 7px 11px;
+    text-align: center;
+}
+.box-container-right th {
+    background: #d6fcd6;
+    color: #256a15;
+    font-weight: bold;
+}
+/* Form Styles */
 .form-example label {
     font-weight: bold;
 }
-
 .form-example input,
 .form-example select {
     width: 100%;
@@ -118,7 +150,6 @@ header {
     font-size: 16px;
     box-sizing: border-box;
 }
-
 .form-example input[type="color"] {
     width: 38px;
     height: 28px;
@@ -127,13 +158,11 @@ header {
     background: transparent;
     border: none;
 }
-
 .form-example input[type="radio"] {
     width: auto;
     margin-left: 8px;
     margin-right: 2px;
 }
-
 .form-example button {
     padding: 10px;
     background-color: #4CAF50;
@@ -144,60 +173,33 @@ header {
     cursor: pointer;
     margin-top: 8px;
 }
-
 .form-example button:hover {
     background-color: #45a049;
 }
-
 .form-example a {
     color: #4CAF50;
     text-decoration: underline;
 }
-
 .checkbox-container label {
     font-weight: normal;
 }
-
 .color-picker {
     align-items: center;
     gap: 8px;
 }
-
 .gender {
     display: flex;
     align-items: center;
     gap: 14px;
 }
-
 .gender label {
     font-weight: normal;
 }
-
-.box-container-left-bottom {
-    background-color: rgb(255, 0, 8);
-    color: #fff;
-    width: 350px;
-    min-height: 120px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 20px;
-    box-shadow: 0 2px 12px rgba(10,10,200,0.09);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.box-container-left-bottom h3 {
-    color: #fff;
-    margin: 0 0 14px 0;
-    font-size: 19px;
-}
-
+/* Login (bottom left) */
 .box-container-left-bottom label {
     color: #e0eaff;
     font-weight: bold;
 }
-
 .box-container-left-bottom input {
     width: 100%;
     padding: 8px;
@@ -208,7 +210,6 @@ header {
     background: #e9f2ff;
     color: #021a53;
 }
-
 .box-container-left-bottom button {
     background-color: #00a6ff;
     color: white;
@@ -219,16 +220,13 @@ header {
     cursor: pointer;
     margin-top: 8px;
 }
-
 .box-container-left-bottom button:hover {
     background-color: #0056b3;
 }
-
 .box-container-left-bottom a {
     color: #fff;
     text-decoration: underline;
 }
-
 .alert.alert-danger {
     background: #ffe8f0;
     color: #bf0030;
@@ -238,69 +236,19 @@ header {
     margin-bottom: 8px;
     font-size: 14px;
 }
-
-.box-container-right {
-    background-color: rgb(43, 149, 206);
-    width: 350px;
-    min-height: 492px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 24px 14px 16px 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    box-shadow: 0 2px 12px rgba(80,80,80,0.10);
-}
-
-.box-container-right table {
-    width: 80%;
-    border-collapse: collapse;
-    background: #fff;
-    border-radius: 6px;
-    overflow: hidden;
-    margin: 20px auto;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.09);
-}
-
-.box-container-right thead th {
-    background: lightgray;
-    color: #222;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 8px 0;
-    border-bottom: 1px solid #aaa;
-    text-align: center;
-}
-
-.box-container-right tbody td {
-    padding: 10px 4px;
-    border-bottom: 1px solid #eee;
-    font-size: 15px;
-    color: #333;
-    text-align: center;
-}
-
-.box-container-right tbody tr:last-child td {
-    border-bottom: none;
-}
-
-@media (max-width: 900px) {
+/* Responsive Design */
+@media (max-width: 950px) {
+    .box-container,
     .container {
-        flex-direction: column;
-        width: 98vw;
-        gap: 12px;
-    }
-    .box-container {
-        flex-direction: column;
-        gap: 16px;
+        flex-direction: column !important;
+        width: 100%;
         align-items: center;
     }
     .box-container-left,
-    .box-container-right,
-    .box-container-left-top,
-    .box-container-left-bottom {
-        width: 98vw !important;
+    .box-container-right {
+        width: 97vw !important;
         max-width: 99vw;
+        margin-bottom: 20px;
+        border-radius: 16px;
     }
 }
