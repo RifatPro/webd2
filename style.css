@@ -111,9 +111,12 @@ header {
     color: #fff;
     justify-content: flex-start;
     align-items: center;
-    min-height: 220px;
-    /* Let it grow with content, not fixed! */
+    min-height: 965px;
+    
 }
+
+
+
 /* Table Style */
 .box-container-right table {
     width: 90%;
@@ -136,6 +139,9 @@ header {
     color: #256a15;
     font-weight: bold;
 }
+
+
+
 /* Form Styles */
 .form-example label {
     font-weight: bold;

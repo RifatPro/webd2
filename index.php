@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "database.php"; // make sure this points to your DB connection
+require_once "database.php"; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
   $email = $_POST["email"];
@@ -151,7 +151,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
 
 
 
-          <!-- Right Box -->
+          
+      </div>
+
+      <!-- Right Box -->
           <div class="box-container-right">
             <table>
               <thead>
@@ -163,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
               <tbody>
                 <tr>
                   <td>Row 1</td>
-                  <td>Col 2</td>
+                  <td>Col 1</td>
                 </tr>
                 <tr>
                   <td>Row 2</td>
@@ -171,41 +174,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
                 </tr>
                 <tr>
                   <td>Row 3</td>
-                  <td>Col 2</td>
+                  <td>Col 3</td>
                 </tr>
                 <tr>
                   <td>Row 4</td>
-                  <td>Col 2</td>
+                  <td>Col 4</td>
                 </tr>
                 <tr>
                   <td>Row 5</td>
-                  <td>Col 2</td>
+                  <td>Col 5</td>
                 </tr>
                 <tr>
                   <td>Row 6</td>
-                  <td>Col 2</td>
+                  <td>Col 6</td>
                 </tr>
                 <tr>
                   <td>Row 7</td>
-                  <td>Col 2</td>
+                  <td>Col 7</td>
                 </tr>
                 <tr>
                   <td>Row 8</td>
-                  <td>Col 2</td>
+                  <td>Col 8</td>
                 </tr>
                 <tr>
                   <td>Row 9</td>
-                  <td>Col 2</td>
+                  <td>Col 9</td>
                 </tr>
                 <tr>
                   <td>Row 10</td>
-                  <td>Col 2</td>
+                  <td>Col 10</td>
                 </tr>
               </tbody>
             </table>
 
           </div>
-      </div>
     </section>
 
   </main>
