@@ -1,11 +1,22 @@
 <?php
 session_start();
-require_once "database.php"; 
+require_once "database.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
   $email = $_POST["email"];
   $password = $_POST["password"];
 
+  // 🔐 Hardcoded Admin Login
+  $admin_email = "admin";
+  $admin_password = "admin";
+
+  if ($email === $admin_email && $password === $admin_password) {
+    $_SESSION["admin"] = true;
+    header("Location: admin_dashboard.php");
+    exit();
+  }
+
+  // 👤 Regular User Login (Database)
   $sql = "SELECT * FROM userinfo WHERE email = ?";
   $stmt = mysqli_prepare($conn, $sql);
   mysqli_stmt_bind_param($stmt, "s", $email);
@@ -14,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
   $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
   if ($user) {
-    if ($password === $user["password"]) {  // Plain text match
+    if ($password === $user["password"]) {  // Consider using hashing later
       $_SESSION["user"] = $user["email"];
       header("Location: requestaqi.php");
       exit();
